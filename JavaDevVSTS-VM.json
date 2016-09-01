@@ -2,6 +2,14 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
+     "adminUserName": {
+            "type": "string",
+            "defaultValue": "vmadmin"
+        },
+        "adminPassword": {
+            "type": "secureString",
+            "defaultValue": null
+        },
     "javaDevVmDnsNameForPublicIP": {
       "type": "string",
       "metadata": {
@@ -185,6 +193,15 @@
             "createOption": "Attach"
           }
         },
+        "osProfile": {
+                    "computerName": "[variables('javaDevVmName')]",
+                    "adminUsername": "[parameters('adminUserName')]",
+                    "linuxConfiguration": {
+                        "disablePasswordAuthentication": false
+                    },
+                    "secrets": [],
+                    "adminPassword": "[parameters('adminPassword')]"
+                },
         "networkProfile": {
           "networkInterfaces": [
             {
