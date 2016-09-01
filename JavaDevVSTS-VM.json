@@ -193,15 +193,6 @@
             "createOption": "FromImage"
           }
         },
-        "osProfile": {
-                    "computerName": "[variables('javaDevVmName')]",
-                    "adminUsername": "[parameters('adminUserName')]",
-                    "linuxConfiguration": {
-                        "disablePasswordAuthentication": false
-                    },
-                    "secrets": [],
-                    "adminPassword": "[parameters('adminPassword')]"
-                },
         "networkProfile": {
           "networkInterfaces": [
             {
