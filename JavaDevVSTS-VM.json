@@ -190,7 +190,7 @@
             "vhd": {
               "uri": "[parameters('javaDevVmVhdUri')]"
             },
-            "createOption": "Attach"
+            "createOption": "FromImage"
           }
         },
         "osProfile": {
